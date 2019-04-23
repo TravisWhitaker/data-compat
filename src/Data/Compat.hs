@@ -7,7 +7,7 @@ Maintainer  : pi.boy.travis@gmail.com
 Stability   : Provisional
 Portability : Portable
 
-See <http://programmable.computer/compatible.hs> for a full exposition and
+See <http://programmable.computer/compatible.html> for a full exposition and
 worked examples.
 -}
 
@@ -24,15 +24,9 @@ module Data.Compat where
 
 import Control.Applicative
 
-import Control.Monad.Trans.Reader
-
 import Data.Constraint
 
 import Data.Proxy
-
-import Data.Void
-
-import GHC.TypeLits
 
 -- | A class for backwards-compatible data.
 class Compat a where
