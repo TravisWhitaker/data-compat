@@ -9,7 +9,7 @@ license:             MIT
 license-file:        LICENSE
 author:              Travis Whitaker
 maintainer:          pi.boy.travis@gmail.com
-copyright:           Travis Whitaker 2019
+copyright:           Travis Whitaker 2019-2021
 category:            Data
 extra-source-files:  CHANGELOG.md
 
@@ -18,6 +18,6 @@ library
   -- other-modules:
   -- other-extensions:
   build-depends:       base >= 4.12.0.0 && < 4.15
-                     , constraints >= 0.10 && < 0.13
+                     , constraints >= 0.10 && < 0.14
   hs-source-dirs:      src
   default-language:    Haskell2010
