@@ -2,13 +2,13 @@ let pinned-nixpkgs = builtins.fetchGit
     {
         url = "https://github.com/nixos/nixpkgs";
         ref = "master";
-        rev = "3d546fab4ea62f021976ef0a9991bb7ad9f35d33";
+        rev = "859516a1a5af797ab11ac7597aa77a670877d87f";
     };
 in with import pinned-nixpkgs {};
 runCommand "data-compat-env"
 {
     buildInputs =
-        let thisghc = haskell.packages.ghc8104.ghcWithPackages
+        let thisghc = haskell.packages.ghc924.ghcWithPackages
             (p: [ p.cabal-install
                   p.ghcid
                 ]);
