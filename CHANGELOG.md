@@ -1,9 +1,13 @@
 # Revision history for data-compat
 
-## 0.1.0.4 -- 2024-11-09
+## 0.1.0.5 -- 2024-11-09
 
 * Bump bounds.
 * Fix warnings that will become errors in future GHC releases.
+
+## 0.1.0.4 -- 2022-09-27
+
+* Bump bounds.
 
 ## 0.1.0.3 -- 2021-03-23
 
