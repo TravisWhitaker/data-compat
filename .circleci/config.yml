@@ -3,32 +3,29 @@ version: 2
 jobs:
     build:
         docker:
-            - image: nixos/nix:2.3.10
+            - image: nixos/nix:2.25.2
         steps:
             - run:
-                name: Update nixos-20.09
+                name: Update nixos-24.05
                 command: |
-                    nix-channel --add https://nixos.org/channels/nixos-20.09 nixpkgs
+                    nix-channel --add https://nixos.org/channels/nixos-24.05 nixpkgs
                     nix-channel --update
             - run:
                 name: Forfeit freedom
                 command: |
                     mkdir -p ~/.config/nixpkgs
                     echo "{allowUnfree = true;}" >> ~/.config/nixpkgs/config.nix
-            - run:
-                name: Install Utils
-                command: |
-                    nix-env -u
-                    nix-env -i coreutils openssh git bash cachix
+            # - run:
+            #     name: Install Utils
+            #     command: |
+            #         nix-env -u
+            #         nix-env -i coreutils openssh git bash
             - checkout
             - run:
                 name: Configure Nix
                 command: |
                     mkdir -p /etc/nix
                     echo "build-cores = 2" >> /etc/nix/nix.conf
-            # - run:
-            #     name: Setup Cachix
-            #     command: cachix use data-compat
             - run:
                 name: Build data-compat
                 command: nix-shell --pure --run "cabal new-update && cabal new-build -j$(nproc)"
